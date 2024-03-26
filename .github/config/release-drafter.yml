@@ -29,15 +29,15 @@ categories:
     labels:
       - bug
   - title: ⬆️ Dependencies
-    collapse-after: 3
+    collapse-after: 0
     labels:
       - dependencies
   - title: 🧰 Maintenance
-    collapse-after: 3
+    collapse-after: 0
     labels:
       - chore
 
-change-template: '- $TITLE (#$NUMBER) @$AUTHOR'
+change-template: '- $TITLE (#$NUMBER)'
 change-title-escapes: \<*_&
 
 version-resolver:
