@@ -1,0 +1,58 @@
+# Copyright 2024 Recoco
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+name-template: v$RESOLVED_VERSION
+tag-template: v$RESOLVED_VERSION
+
+filter-by-commitish: true
+tag-prefix: v
+
+exclude-labels:
+  - skip-changelog
+
+categories:
+  - title: 🚀 Features
+    labels:
+      - enhancement
+  - title: 🐛 Bug Fixes
+    labels:
+      - bug
+  - title: ⬆️ Dependencies
+    collapse-after: 3
+    labels:
+      - dependencies
+  - title: 🧰 Maintenance
+    collapse-after: 3
+    labels:
+      - chore
+
+change-template: '- $TITLE (#$NUMBER) @$AUTHOR'
+change-title-escapes: \<*_&
+
+version-resolver:
+  major:
+    labels:
+      - major
+  minor:
+    labels:
+      - minor
+  patch:
+    labels:
+      - patch
+  default: patch
+
+template: |
+  ## What's Changed
+
+  $CHANGES
