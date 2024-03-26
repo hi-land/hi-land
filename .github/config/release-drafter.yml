@@ -37,7 +37,6 @@ categories:
       - chore
       - dependencies
 
-category-template: '### $TITLE'
 change-template: '- [`#$NUMBER`]($URL) $TITLE'
 change-title-escapes: \<*_&
 
@@ -51,11 +50,11 @@ version-resolver:
   default: patch
 
 template: |
-  ## 🎁 What's Changed
+  # 🎁 What's Changed
 
   $CHANGES
 
-  ---
+  <br/>
 
   <!-- **Release Notes**: Learn more in our [blog post](https://recoco-ac.github.io/recoco/blog/releases/$MAJOR.$MINOR). -->
   **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...$RESOLVED_VERSION
