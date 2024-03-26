@@ -29,30 +29,24 @@ categories:
     labels:
       - bug
   - title: ⬆️ Dependencies
-    collapse-after: 0
+    collapse-after: 1
     labels:
       - dependencies
   - title: 🧰 Maintenance
-    collapse-after: 0
+    collapse-after: 1
     labels:
       - chore
 
-change-template: '- $TITLE (#$NUMBER)'
+change-template: '- `#$NUMBER` $TITLE'
 change-title-escapes: \<*_&
 
 version-resolver:
-  major:
-    labels:
-      - major
   minor:
     labels:
-      - minor
-  patch:
-    labels:
-      - patch
+      - enhancement
   default: patch
 
 template: |
-  ## What's Changed
+  # What's Changed
 
   $CHANGES
