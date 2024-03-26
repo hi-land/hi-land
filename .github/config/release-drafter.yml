@@ -22,14 +22,14 @@ exclude-labels:
   - skip-changelog
 
 categories:
-  - title: Features
+  - title: '# Features'
     labels:
       - enhancement
-  - title: Bug Fixes
+  - title: '# Bug Fixes'
     labels:
       - bug
-  - title: Maintenance
-    collapse-after: 1
+  - title: '# Maintenance'
+    collapse-after: 3
     labels:
       - chore
       - dependencies
