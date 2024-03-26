@@ -22,20 +22,17 @@ exclude-labels:
   - skip-changelog
 
 categories:
-  - title: 🚀 Features
+  - title: Features
     labels:
       - enhancement
-  - title: 🐛 Bug Fixes
+  - title: Bug Fixes
     labels:
       - bug
-  - title: 📦 Dependencies
-    collapse-after: 1
-    labels:
-      - dependencies
-  - title: 🧰 Maintenance
+  - title: Maintenance
     collapse-after: 1
     labels:
       - chore
+      - dependencies
 
 change-template: '- [`#$NUMBER`]($URL) $TITLE'
 change-title-escapes: \<*_&
