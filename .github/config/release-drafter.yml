@@ -22,7 +22,7 @@ exclude-labels:
   - skip-changelog
 
 categories:
-  - title: :boom: Breaking Changes
+  - title: 💥 Breaking Changes
     labels:
       - breaking change
   - title: Enhancements
