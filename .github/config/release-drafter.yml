@@ -22,13 +22,16 @@ exclude-labels:
   - skip-changelog
 
 categories:
-  - title: '# Features'
+  - title: :boom: Breaking Changes
+    labels:
+      - breaking change
+  - title: Enhancements
     labels:
       - enhancement
-  - title: '# Bug Fixes'
+  - title: Bug Fixes
     labels:
       - bug
-  - title: '# Maintenance'
+  - title: Maintenance
     collapse-after: 3
     labels:
       - chore
@@ -38,6 +41,9 @@ change-template: '- [`#$NUMBER`]($URL) $TITLE'
 change-title-escapes: \<*_&
 
 version-resolver:
+  major:
+    labels:
+      - breaking change
   minor:
     labels:
       - enhancement
