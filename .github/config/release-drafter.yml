@@ -12,11 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name-template: v$RESOLVED_VERSION
-tag-template: v$RESOLVED_VERSION
+version-template: v$RESOLVED_VERSION
+# tag-template: v$RESOLVED_VERSION
 
 filter-by-commitish: true
-tag-prefix: v
+# tag-prefix: v
 
 exclude-labels:
   - skip-changelog
@@ -55,4 +55,7 @@ template: |
 
   $CHANGES
 
-  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
+  ---
+
+  <!-- **Release Notes**: Learn more in our [blog post](https://recoco-ac.github.io/recoco/blog/releases/$MAJOR.$MINOR). -->
+  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...$RESOLVED_VERSION
