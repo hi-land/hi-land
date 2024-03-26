@@ -28,7 +28,7 @@ categories:
   - title: 🐛 Bug Fixes
     labels:
       - bug
-  - title: ⬆️ Dependencies
+  - title: 📦 Dependencies
     collapse-after: 1
     labels:
       - dependencies
@@ -37,7 +37,7 @@ categories:
     labels:
       - chore
 
-change-template: '- `#$NUMBER` $TITLE'
+change-template: '- [`#$NUMBER`]($URL) $TITLE'
 change-title-escapes: \<*_&
 
 version-resolver:
@@ -47,6 +47,6 @@ version-resolver:
   default: patch
 
 template: |
-  # What's Changed
+  # 🎁 What's Changed
 
   $CHANGES
