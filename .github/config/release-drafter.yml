@@ -22,7 +22,7 @@ exclude-labels:
   - skip-changelog
 
 categories:
-  - title: 💥 Breaking Changes
+  - title: 💥 BREAKING CHANGES
     labels:
       - breaking change
   - title: Enhancements
@@ -53,3 +53,6 @@ template: |
   # 🎁 What's Changed
 
   $CHANGES
+
+footer: |
+  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...$RESOLVED_VERSION
