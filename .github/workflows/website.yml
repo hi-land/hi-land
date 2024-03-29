@@ -34,3 +34,53 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          package_json_file: website/package.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: website/package.json
+          cache: pnpm
+          cache-dependency-path: website/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: website
+          path: website/build
+
+  preview:
+    if: github.event_name == 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: website
+          path: website
+      - uses: afc163/surge-preview@aa8af097638fc8a9c29db23a11ce9ca3692ad27d
+        with:
+          surge_token: ${{ secrets.SURGE_TOKEN }}
+          teardown: true
+          failOnError: true
+          build: du -sh website
+          dist: website
+
+  deploy:
+    if: github.event_name == 'push' && github.repository_owner == 'hi-land'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: website
+          path: website
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: website
+      - uses: actions/deploy-pages@v4

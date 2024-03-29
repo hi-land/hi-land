@@ -11,29 +11,3 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-header:
-  license:
-    spdx-id: Apache-2.0
-    copyright-owner: Recoco
-    copyright-year: 2024
-  comment: on-failure
-
-  paths-ignore:
-    - '**/.idea/**'
-    - '**/node_modules/**'
-    - '**/*.md'
-    - '**/*.mdx'
-    - '**/*.json'
-    - '**/*.svg'
-    - 'LICENSE'
-    - 'go.sum'
-    - '.nvmrc'
-    - 'pnpm-lock.yaml'
-
-    - 'web/dist/**'
-    - 'web/dev-dist/**'
-    - 'web/src/routeTree.gen.ts'
-
-    - 'website/.docusaurus/**'
-    - 'website/build/**'

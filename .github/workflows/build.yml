@@ -12,28 +12,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-header:
-  license:
-    spdx-id: Apache-2.0
-    copyright-owner: Recoco
-    copyright-year: 2024
-  comment: on-failure
+name: Build
 
-  paths-ignore:
-    - '**/.idea/**'
-    - '**/node_modules/**'
-    - '**/*.md'
-    - '**/*.mdx'
-    - '**/*.json'
-    - '**/*.svg'
-    - 'LICENSE'
-    - 'go.sum'
-    - '.nvmrc'
-    - 'pnpm-lock.yaml'
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - 'docs/**'
+      - '**/*.md'
+  pull_request:
+    paths-ignore:
+      - 'docs/**'
+      - '**/*.md'
 
-    - 'web/dist/**'
-    - 'web/dev-dist/**'
-    - 'web/src/routeTree.gen.ts'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
 
-    - 'website/.docusaurus/**'
-    - 'website/build/**'
+# TODO

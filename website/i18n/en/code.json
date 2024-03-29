@@ -1,0 +1,14 @@
+{
+  "home.header.getStarted": {
+    "message": "User Guide - 5min ⏱️"
+  },
+  "home.features.1.description": {
+    "message": "Recoco Core Feature (1)"
+  },
+  "home.features.2.description": {
+    "message": "Recoco Core Feature (2)"
+  },
+  "home.features.3.description": {
+    "message": "Recoco Core Feature (3)"
+  }
+}

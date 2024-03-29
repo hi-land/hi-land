@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Draft changelog
+name: Draft Changelog
 
 on:
   push:
@@ -20,13 +20,13 @@ on:
 
 jobs:
   run:
-    if: github.repository_owner == 'hi-land'
+    if: github.repository_owner == 'recoco-ac'
     runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: read
     steps:
-      - uses: release-drafter/release-drafter@v5
+      - uses: release-drafter/release-drafter@v6
         with:
           config-name: config/release-drafter.yml
           disable-autolabeler: true

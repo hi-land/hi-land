@@ -16,7 +16,6 @@ name-template: v$RESOLVED_VERSION
 tag-template: v$RESOLVED_VERSION
 
 filter-by-commitish: true
-# tag-prefix: v
 
 exclude-labels:
   - skip-changelog
