@@ -20,6 +20,7 @@ import { defineConfig } from "vite";
 import checker from "vite-plugin-checker";
 import { createHtmlPlugin } from "vite-plugin-html";
 import { VitePWA } from "vite-plugin-pwa";
+import styleX from "vite-plugin-stylex";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
@@ -33,6 +34,8 @@ export default defineConfig({
     createHtmlPlugin({
       entry: "src/app.tsx",
     }),
+    styleX(),
+
     TanStackRouterVite(),
     VitePWA({
       registerType: "autoUpdate",

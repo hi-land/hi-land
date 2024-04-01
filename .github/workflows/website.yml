@@ -18,10 +18,12 @@ on:
   push:
     branches: [ main ]
     paths:
+      - 'docs/**'
       - 'website/**'
       - '.github/workflows/website.yml'
   pull_request:
     paths:
+      - 'docs/**'
       - 'website/**'
       - '.github/workflows/website.yml'
 
@@ -34,15 +36,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
+      - uses: jetpack-io/devbox-install-action
         with:
-          package_json_file: website/package.json
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: website/package.json
-          cache: pnpm
-          cache-dependency-path: website/pnpm-lock.yaml
-      - run: pnpm install --frozen-lockfile
+          project-path: website
+          enable-cache: true
       - run: pnpm build
       - uses: actions/upload-artifact@v4
         with:
@@ -69,7 +66,7 @@ jobs:
           dist: website
 
   deploy:
-    if: github.event_name == 'push' && github.repository_owner == 'hi-land'
+    if: github.event_name == 'push' && github.repository_owner == 'recoco-ac'
     needs: build
     runs-on: ubuntu-latest
     permissions:

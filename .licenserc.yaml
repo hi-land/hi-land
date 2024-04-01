@@ -21,19 +21,20 @@ header:
 
   paths-ignore:
     - '**/.idea/**'
-    - '**/node_modules/**'
+    - '**/.devbox/**'
+
     - '**/*.md'
     - '**/*.mdx'
     - '**/*.json'
     - '**/*.svg'
     - 'LICENSE'
+
     - 'go.sum'
-    - '.nvmrc'
     - 'pnpm-lock.yaml'
+    - '**/node_modules/**'
 
-    - 'web/dist/**'
-    - 'web/dev-dist/**'
+    - 'web/dist'
+    - 'web/dev-dist'
     - 'web/src/routeTree.gen.ts'
-
-    - 'website/.docusaurus/**'
-    - 'website/build/**'
+    - 'website/.docusaurus'
+    - 'website/build'

@@ -19,6 +19,7 @@ import { fileURLToPath } from "node:url";
 
 import { FlatCompat } from "@eslint/eslintrc";
 import eslint from "@eslint/js";
+import styleX from "@stylexjs/eslint-plugin";
 import prettier from "eslint-config-prettier";
 import onlyWarn from "eslint-plugin-only-warn";
 import jsxRuntime from "eslint-plugin-react/configs/jsx-runtime.js";
@@ -37,11 +38,11 @@ const compat = new FlatCompat({ baseDirectory: __dirname });
 export default [
   {
     ignores: [
-      "node_modules",
       "public",
+      "node_modules",
       "dist",
       "dev-dist",
-      // generated files
+      "coverage",
       "src/routeTree.gen.ts",
     ],
   },
@@ -124,17 +125,19 @@ export default [
   // Code Style
 
   prettier,
-  ...compat.extends("plugin:tailwindcss/recommended"),
 
   {
     plugins: {
       onlyWarn,
       simpleImportSort,
+      styleX,
     },
 
     rules: {
       "simpleImportSort/imports": "warn",
       "simpleImportSort/exports": "warn",
+      "styleX/valid-styles": "warn",
+      "styleX/sort-keys": "warn",
     },
   },
 ];

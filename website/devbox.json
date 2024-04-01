@@ -1,0 +1,16 @@
+{
+  "packages": [
+    "nodejs@18"
+  ],
+  "env": {
+    "DEVBOX_COREPACK_ENABLED": "true"
+  },
+  "shell": {
+    "init_hook": [
+      "pnpm install --frozen-lockfile"
+    ],
+    "scripts": {
+      "test": "pnpm test"
+    }
+  }
+}

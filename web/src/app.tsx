@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-import "./index.css";
-
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -29,7 +27,7 @@ declare module "@tanstack/react-router" {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion,unicorn/prefer-query-selector
+// eslint-disable-next-line unicorn/prefer-query-selector -- false positive for React SPA root
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <RouterProvider router={router} />

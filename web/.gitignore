@@ -15,9 +15,10 @@
 ### Dependencies ###
 /node_modules/
 
-### Generated Files ###
-src/routeTree.gen.ts
-
 ### Build ###
 /dist/
 /dev-dist/
+/coverage/
+
+### Generated Files ###
+src/routeTree.gen.ts

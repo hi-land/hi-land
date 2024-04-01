@@ -23,6 +23,7 @@ go.work
 *.dylib
 
 ### Dev ###
+.devbox/
 .env*.local
 *.log
 

@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import stylex from "@stylexjs/stylex";
 import { createLazyFileRoute, Link } from "@tanstack/react-router";
 
 export const Route = createLazyFileRoute("/")({
@@ -24,7 +25,15 @@ function Index() {
   return (
     <>
       <Link to="/about">About</Link>
-      <div className="p-2">Welcome Home!</div>
+      <div className={stylex(styles.base)}>Welcome Home!</div>
     </>
   );
 }
+
+const styles = stylex.create({
+  base: {
+    color: "rgb(130,0,0)",
+    fontSize: 32,
+    lineHeight: 2,
+  },
+});
